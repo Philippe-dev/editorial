@@ -14,7 +14,6 @@ namespace Dotclear\Theme\editorial;
 
 use Dotclear\App;
 use Dotclear\Helper\Process\TraitProcess;
-use Dotclear\Core\Backend\Page;
 
 class Backend
 {
@@ -44,8 +43,8 @@ class Backend
 
             if (!App::auth()->prefs()->get('accessibility')->get('nodragdrop')) {
                 echo
-                Page::jsLoad('js/jquery/jquery-ui.custom.js') .
-                Page::jsLoad('js/jquery/jquery.ui.touch-punch.js');
+                App::backend()->page()->jsLoad('js/jquery/jquery-ui.custom.js') .
+                App::backend()->page()->jsLoad('js/jquery/jquery.ui.touch-punch.js');
             }
         });
 

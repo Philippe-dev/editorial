@@ -14,8 +14,6 @@ declare(strict_types=1);
 namespace Dotclear\Theme\editorial;
 
 use Dotclear\App;
-use Dotclear\Core\Backend\Notices;
-use Dotclear\Core\Backend\Page;
 use Dotclear\Helper\Process\TraitProcess;
 use Dotclear\Helper\File\Files;
 use Dotclear\Helper\Html\Form\Button;
@@ -223,7 +221,7 @@ class Config
 
                         $encode('images');
 
-                        Notices::addSuccessNotice(__('Theme presentation has been updated.'));
+                        App::backend()->notices()->addSuccessNotice(__('Theme presentation has been updated.'));
                     }
                 } elseif (App::backend()->conf_tab === 'stickers') {
                     $stickers = [];
@@ -258,7 +256,7 @@ class Config
                     self::$conf_stickers = $stickers;
                     $encode('stickers');
 
-                    Notices::addSuccessNotice(__('Theme stickers have been updated.'));
+                    App::backend()->notices()->addSuccessNotice(__('Theme stickers have been updated.'));
                 }
 
                 // Blog refresh
@@ -409,7 +407,7 @@ class Config
             ])
         ->render();
 
-        Page::helpBlock('editorial');
+        App::backend()->page()->helpBlock('editorial');
     }
 
     /**
