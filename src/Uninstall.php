@@ -19,7 +19,7 @@ use Dotclear\Plugin\Uninstaller\Uninstaller;
 class Uninstall
 {
     use TraitProcess;
-    
+
     public static function init(): bool
     {
         return self::status(My::checkContext(My::UNINSTALL));

@@ -20,7 +20,7 @@ use Dotclear\Helper\Process\TraitProcess;
 class Frontend
 {
     use TraitProcess;
-    
+
     public static function init(): bool
     {
         return self::status(My::checkContext(My::FRONTEND));
@@ -150,16 +150,19 @@ class Frontend
 
     public static function bigImageHelper(): string
     {
-        $images = self::decode('images');
-        $source = $images['default_image_url'] ?? '';
+        $default_image_url = My::fileURL('/images/image-placeholder-1920x1080.jpg');
 
-        if (!empty($source)) {
-            $url    = parse_url($source);
-            $path   = $url['path'] ?? '';
-            $source = pathinfo($path, PATHINFO_DIRNAME) . '/' . pathinfo($path, PATHINFO_FILENAME) . '.' . pathinfo($path, PATHINFO_EXTENSION);
+        $images = App::blog()->settings->themes->get(App::blog()->settings->system->theme . '_images');
+        $images = $images ? (unserialize($images) ?: []) : [];
+
+        if (!is_array($images)) {
+            $images = [];
+        }
+        if (!isset($images['default_image_url']) || empty($images['default_image_url'])) {
+            $images['default_image_url'] = $default_image_url;
         }
 
-        return is_string($source) ? $source : '';
+        return $images['default_image_url'];
     }
 
     /**
@@ -187,18 +190,19 @@ class Frontend
 
     public static function smallImageHelper(): string
     {
-        $images = self::decode('images');
-        $source = $images['default_small_image_url'] ?? '';
+        $default_image_url = My::fileURL('/images/image-placeholder-600x338.jpg');
 
-        if (!empty($source)) {
-            $url       = parse_url($source);
-            $path      = $url['path'] ?? '';
-            $extension = pathinfo($path, PATHINFO_EXTENSION);
-            $extension = strtolower($extension) === 'jpeg' ? 'jpg' : $extension;
-            $source    = pathinfo($path, PATHINFO_DIRNAME) . '/' . '.' . pathinfo($path, PATHINFO_FILENAME) . '_m.' . $extension;
+        $images = App::blog()->settings->themes->get(App::blog()->settings->system->theme . '_images');
+        $images = $images ? (unserialize($images) ?: []) : [];
+
+        if (!is_array($images)) {
+            $images = [];
+        }
+        if (!isset($images['default_small_image_url']) || empty($images['default_small_image_url'])) {
+            $images['default_small_image_url'] = $default_image_url;
         }
 
-        return is_string($source) ? $source : '';
+        return $images['default_small_image_url'];
     }
 
     /**

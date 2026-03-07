@@ -45,7 +45,7 @@ use Exception;
 class Config
 {
     use TraitProcess;
-    
+
     /**
      * @var     array<string, mixed>    $default_images
      */
