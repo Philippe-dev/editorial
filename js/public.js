@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Sidebar management
-    const sidebar = document.getElementById('menu');
+    const sidebar = document.getElementById('sidebar');
     const toggle = document.getElementById('toggle');
 
     function setSidebarState(isOpen) {
