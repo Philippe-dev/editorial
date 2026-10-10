@@ -723,6 +723,10 @@ a.image:hover img {
   transform: scale(1.075);
 }
 
+.media-center {
+  margin-inline: auto;
+}
+
 ol {
   list-style: decimal;
   margin: 0 0 2em 0;
