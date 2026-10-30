@@ -1,6 +1,6 @@
 # Éditorial
 
-![Release 10.3](https://img.shields.io/badge/Release-10.3-b7d7ee)
+![Release 10.4](https://img.shields.io/badge/Release-10.4-b7d7ee)
 ![CCA 3.0 license](https://img.shields.io/badge/License-CCA_3.0-a5cc52)
 ![Dotclear 2.39](https://img.shields.io/badge/Dotclear-2.39-137bbb)
 

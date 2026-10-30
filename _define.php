@@ -15,9 +15,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'Éditorial',
         'A theme for Dotclear',
         'Philippe aka amalgame and contributors',
-        '10.3',
+        '10.4',
         [
-            'date'              => '2026-08-16T10:00:00+0100',
+            'date'              => '2026-10-30T10:00:00+0100',
             'requires'          => [['core', '2.39']],
             'standalone_config' => true,
             'type'              => 'theme',
