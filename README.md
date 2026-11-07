@@ -1,8 +1,8 @@
 # Éditorial
 
-![Release 10.5](https://img.shields.io/badge/Release-10.5-b7d7ee)
+![Release 10.6](https://img.shields.io/badge/Release-10.6-b7d7ee)
 ![CCA 3.0 license](https://img.shields.io/badge/License-CCA_3.0-a5cc52)
-![Dotclear 2.39](https://img.shields.io/badge/Dotclear-2.39-137bbb)
+![Dotclear 2.40](https://img.shields.io/badge/Dotclear-2.40-137bbb)
 
 ## Crédits
 

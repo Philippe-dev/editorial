@@ -15,10 +15,10 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'Éditorial',
         'A theme for Dotclear',
         'Philippe aka amalgame and contributors',
-        '10.5',
+        '10.6',
         [
             'date'              => '2026-11-07T10:00:00+0100',
-            'requires'          => [['core', '2.39']],
+            'requires'          => [['core', '2.40']],
             'standalone_config' => true,
             'type'              => 'theme',
             'tplset'            => 'dotty',
